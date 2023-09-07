@@ -9,7 +9,7 @@ if __name__ == "__main__":
     num1 = int(argv[1])
     num2 = int(argv[3])
     options = ["+", "-", "*", "/"]
-    from calculator_1 import *
+    from calculator_1 import add, sub, mul, div
     functions = [add, sub, mul, div]
     for i, n in enumerate(options):
         if argv[2] == n:
