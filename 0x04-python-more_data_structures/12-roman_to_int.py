@@ -1,13 +1,15 @@
 #!/usr/bin/python3
 def roman_to_int(roman_string):
-    rom_data = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
-    numbers = [rom_data[n] for n in roman_string] + [0]
+    if not roman_string or not isinstance(roman_string, str):
+        return 0
+    data = {'I': 1,'V': 5,'X': 10,'L': 50,'C': 100,'D': 500,'M': 1000}
     num = 0
-
-    for n in range(len(numbers) - 1):
-        if numbers[n] >= numbers[n+1]:
-            num += numbers[n]
+    prev = 0
+    for i in range(len(roman_string) - 1, -1, -1):
+        current = data.get(roman_string[i], 0)
+        if current >= prev:
+            num += current
         else:
-            num -= numbers[n]
-
+            num -= current
+        prev = current
     return num
