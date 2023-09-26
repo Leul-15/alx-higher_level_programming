@@ -1,8 +1,11 @@
 #!/usr/bin/python3
+"""Define a class Square."""
 
 class Square:
+    """Represent a square."""
 
     def __init__(self, size=0):
+        """Initialize a new square."""
         self.size = size
 
     @property
@@ -16,7 +19,7 @@ class Square:
             raise ValueError("size must be >= 0")
         self.__size = value
     def area(self):
-        return self.__size ** 2
+        return (self.__size * self.__size)
     def my_print(self):
         if self.__size == 0:
             print()
