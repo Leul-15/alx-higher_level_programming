@@ -1,6 +1,11 @@
 #!/usr/bin/python3
-class Square:
+"""
+This module defines a Square class
+Its implements value and type checks for its attributes with area function
+"""
 
+class Square:
+    """Square implementation"""
     def __init__(self, size=0):
         self.__size = size
 
