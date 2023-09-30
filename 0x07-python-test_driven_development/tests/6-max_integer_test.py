@@ -28,7 +28,7 @@ class TestMaxInteger(unittest.TestCase):
         """ test empty"""
         self.assertEqual(max_integer(), None)
 
-    def test_one(self):
+    def test_one_element(self):
         """ test one element in list """
         self.assertEqual(max_integer([7]), 7)
 
