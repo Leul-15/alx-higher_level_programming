@@ -1,18 +1,23 @@
 #!/usr/bin/python3
+
 """ square class """
+
 Rectangle = __import__('9-rectangle').Rectangle
-BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 
 class Square(Rectangle):
     """ square """
+
     def __init__(self, size):
-        """ Initialize a new square """
-        super().__init__(size, size)
-        self.integer_validator("size", size)
+        """ Constructor """
         self.__size = size
+        self.integer_validator("size", size)
+        super().__init__(size, size)
+
+    def area(self):
+        """ Calculator area """
+        return super().area()
 
     def __str__(self):
         """ str """
-        string = "[Square] " + str(self.__size) + "/" + str(self.__size)
-        return string
+        return "[Square] {:d}/{:d}".format(self.__size, self.__size)
