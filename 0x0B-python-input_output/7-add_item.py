@@ -9,10 +9,10 @@ import os.path
 save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
 load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 
-fn = "add_item.json"
-if os.path.isfile(fn):
-    ob = load_from_json_file(fn)
+filename = "add_item.json"
+if os.path.isfile(filename):
+    obj = load_from_json_file(filename)
 else:
-    ob = []
-ob.extend(sys.argv[1:])
-save_to_json_file(ob, fn)
+    obj = []
+obj.extend(sys.argv[1:])
+save_to_json_file(obj, filename)
