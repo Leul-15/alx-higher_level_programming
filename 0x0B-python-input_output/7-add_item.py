@@ -1,18 +1,14 @@
 #!/usr/bin/python3
-"""add item"""
-
-
 import json
-import sys
-import os.path
+from sys import argv
+import os
 
-save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
-load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 
-filename = "add_item.json"
-if os.path.isfile(filename):
-    obj = load_from_json_file(filename)
-else:
-    obj = []
-obj.extend(sys.argv[1:])
-save_to_json_file(obj, filename)
+if __name__ == '__main__':
+    save_json_file = __import__("5-save_to_json_file").save_to_json_file
+    load_json_file = __import__("6-load_from_json_file").load_from_json_file
+    if not os.path.exists("add_item.json"):
+        with open("add_item.json", "a") as f:
+            pass
+        save_json_file([], "add_item.json")
+    save_json_file(load_json_file("add_item.json") + argv[1:], "add_item.json")
