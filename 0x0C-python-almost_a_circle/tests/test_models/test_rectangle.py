@@ -126,11 +126,10 @@ class TestRectangle_area(unittest.TestCase):
 class TestRectangle_stdout(unittest.TestCase):
     """Unittests for testing __str__ and display methods of Rectangle class."""
 
-    def test_str_method_print_width_height(self):
-        rectangle = Rectangle(4, 6)
-        capture = TestRectangle_stdout.capture_stdout(rectangle, "print")
-        correct = "[Rectangle] ({}) 0/0 - 4/6\n".format(rectangle.id)
-        self.assertEqual(correct, capture.getvalue())
+    def test_str_method_width_height_x_y(self):
+        rectangle = Rectangle(1, 8, 2, 4)
+        correct = "[Rectangle] ({}) 2/4 - 1/8".format(rectangle.id)
+        self.assertEqual(correct, str(rectangle))
 
 
 class TestRectangle_update_args(unittest.TestCase):

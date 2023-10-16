@@ -107,11 +107,10 @@ class TestSquare_area(unittest.TestCase):
 class TestSquare_stdout(unittest.TestCase):
     """Unittests for testing __str__ and display methods of Square class."""
 
-    def test_str_method_print_size(self):
-        square = Square(4)
-        capture = TestSquare_stdout.capture_stdout(square, "print")
-        correct = "[Square] ({}) 0/0 - 4\n".format(square.id)
-        self.assertEqual(correct, capture.getvalue())
+    def test_str_method_size_x_y(self):
+        square = Square(7, 4, 22)
+        correct = "[Square] ({}) 4/22 - 7".format(square.id)
+        self.assertEqual(correct, str(square))
 
 
 class TestSquare_update_args(unittest.TestCase):
