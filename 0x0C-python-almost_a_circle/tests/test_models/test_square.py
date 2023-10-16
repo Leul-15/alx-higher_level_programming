@@ -160,7 +160,3 @@ class TestSquare_to_dictionary(unittest.TestCase):
         square = Square(10, 10, 10, 10)
         with self.assertRaises(TypeError):
             square.to_dictionary(1)
-
-
-if __name__ == "__main__":
-    unittest.main()

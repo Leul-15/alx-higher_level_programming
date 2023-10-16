@@ -194,7 +194,3 @@ class TestRectangle_to_dictionary(unittest.TestCase):
         rectangle = Rectangle(10, 2, 4, 1, 2)
         with self.assertRaises(TypeError):
             rectangle.to_dictionary(1)
-
-
-if __name__ == "__main__":
-    unittest.main()
