@@ -30,6 +30,9 @@ class Base:
     @staticmethod
     def to_json_string(list_dictionaries):
         """Return the JSON serialization of a list of dicts.
+
+        Args:
+            list_dictionaries (list): A list of dictionaries.
         """
         if list_dictionaries is None or not list_dictionaries:
             return "[]"
@@ -39,6 +42,9 @@ class Base:
     @classmethod
     def save_to_file(cls, list_objs):
         """Write the JSON serialization of a list of objects to a file.
+
+        Args:
+            list_objs (list): A list of inherited Base instances.
         """
         if list_objs is not None:
             list_objs = [o.to_dictionary() for o in list_objs]
